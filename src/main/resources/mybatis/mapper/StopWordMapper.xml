@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zheng.elasticsearch.plugins.mapper.StopWordMapper" >
+    <resultMap id="BaseResultMap" type="com.zheng.elasticsearch.plugins.domain.StopWord" >
+        <id column="id" property="id"/>
+        <result column="stop_word" property="stopWord"/>
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, stop_word
+    </sql>
+
+    <sql id="Table_Name">es_stop_word</sql>
+    
+    <select id="list" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM <include refid="Table_Name"/>
+    </select>
+
+</mapper>
